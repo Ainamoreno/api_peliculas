@@ -7,6 +7,11 @@
 body {
     background: rgb(224, 224, 176);
 }
+body .titulo1 {
+    margin: 20px;
+    font-size: xx-large;
+    font-weight: 16px;
+}
 
 .contenedor {
     width: 90%;
@@ -23,3 +28,6 @@ body {
     width: 100%;
 }
 
+.btn-cargar-peliculas {
+    margin: 20px;
+}
