@@ -6,9 +6,9 @@ const cargarPeliculas = async () => {
       let peliculas = '';
        datos.results.forEach(pelicula => {
         peliculas += `
-            <div>
-                <img src='https://image.tmdb.org/t/p/w500/${pelicula.poster_path}'
-                <h1>${pelicula.title}</h1>
+            <div class="pelicula">
+                <img class="poster" src='https://image.tmdb.org/t/p/w500/${pelicula.poster_path}'
+                <h1 class="titulo" >${pelicula.title}</h1>
             </div>
             `;
        });
