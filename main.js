@@ -14,12 +14,13 @@ const cargarPeliculas = async (url) => {
         let peliculas = '';
         datos.results.forEach(pelicula => {
             peliculas += `
-            <div class="pelicula">
+            <div class="pelicula" onclick="detallePelicula(${pelicula.id})">
                 <img class="poster" src='https://image.tmdb.org/t/p/w500/${pelicula.poster_path}'>
                 <h3 class="titulo" >${pelicula.title}</h3>
             </div>`;
         });
-        document.getElementById('contenedor').innerHTML = peliculas;
+        document.getElementById('contenedor-peliculas').innerHTML = peliculas;
+        document.getElementById('detalle-pelicula').innerHTML = '';
 
     } catch (error) {
         console.log(error);
@@ -36,17 +37,38 @@ const search = async (event) => {
             let peliculas = '';
             resultado.results.forEach(pelicula => {
                 peliculas += `
-            <div class="pelicula">
+            <div class="pelicula" onclick="detallePelicula(${pelicula.id})">
                 <img class="poster" src='https://image.tmdb.org/t/p/w500/${pelicula.poster_path}'>
                 <h3 class="titulo">${pelicula.title}</h3>
             </div>`
             });
-            document.getElementById('contenedor').innerHTML = peliculas;
+            document.getElementById('contenedor-peliculas').innerHTML = peliculas;
+            document.getElementById('detalle-pelicula').innerHTML = '';
 
         } catch (error) {
             console.log(error)
         }
     }
+}
+
+const detallePelicula =  async (movieId) => {
+    try{
+        const busqueda = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=c4a520e4e71ab0a5e2f83a4b3c9aac47&language=es-ES`)
+        const resultado = await busqueda.json();
+        let datosPelicula = `
+            <h1>${resultado.title}</h1>
+            <p>${resultado.overview}</p>
+            <img src='https://image.tmdb.org/t/p/w500/${resultado.poster_path}'>
+        `;
+        document.getElementById('detalle-pelicula').innerHTML = datosPelicula;
+        document.getElementById('contenedor-peliculas').innerHTML = '';
+
+
+        
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 
 
