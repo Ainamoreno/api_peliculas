@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -11,6 +10,7 @@ body .titulo1 {
     margin: 20px;
     font-size: xx-large;
     font-weight: 16px;
+    font-family: system-ui;
 }
 
 .contenedor {
@@ -30,8 +30,22 @@ body .titulo1 {
 }
 .poster {
     width: 100%;
+    border-radius: 0.5em;
 }
 
 .btn-cargar-peliculas {
     margin: 20px;
+    padding: 5px;
+    background: antiquewhite;
+    font-weight: 600;
+}
+.encabezado {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+.search {
+    align-self: center;
+    height: 25px;
+    margin-right: 1em;
 }
