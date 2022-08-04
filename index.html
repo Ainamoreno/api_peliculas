@@ -9,9 +9,10 @@
     <script src="./main.js" >  </script>
 </head>
 <body>
-    <div class="titulo1">API PELÍCULAS</div>
+    <h1 class="titulo1">API PELÍCULAS</h1>
     <button class="btn-cargar-peliculas"><span onclick="cargarPeliculasPopulares()"> PELICULAS POPULARES </span></button>
     <button class="btn-cargar-peliculas"><span onclick="cargarPeliculasProximas()"> PELICULAS PRÓXIMAS </span></button>
-    <div class="contenedor" id="contenedor"> </div>   
+    <input type="text" class="search" placeholder="Buscar..." onkeydown="search(event)"> 
+    <div class="contenedor" id="contenedor"></div>   
 </body>
 </html>
