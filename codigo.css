@@ -38,6 +38,7 @@ body .titulo1 {
     padding: 5px;
     background: antiquewhite;
     font-weight: 600;
+    cursor: pointer;
 }
 .encabezado {
     background-color: black;
@@ -48,4 +49,8 @@ body .titulo1 {
     align-self: center;
     height: 25px;
     margin-right: 1em;
+}
+
+.pelicula {
+    cursor: pointer;
 }
