@@ -15,7 +15,8 @@ body .titulo1 {
     font-family: system-ui;
     background-color: #1363d333;
     display: inline-block;
-    border-radius: 0.1em;
+    border-radius: 0.5em;
+    padding: 0.5em;
     
 }
 
